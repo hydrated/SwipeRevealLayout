@@ -27,11 +27,11 @@ dependencies {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'swipe-reveal-layout'
+    bintrayName = 'swipe-reveal-layout2'
 
     publishedGroupId = 'com.hydrated.swipereveallayout'
-    libraryName = 'SwipeRevealLayout'
-    artifact = 'swipe-reveal-layout'
+    libraryName = 'SwipeRevealLayout2'
+    artifact = 'swipe-reveal-layout2'
 
     libraryDescription = 'Easy, fast and powerful Swipe Layout for Android'
 
