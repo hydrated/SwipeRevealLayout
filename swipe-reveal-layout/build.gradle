@@ -29,20 +29,20 @@ ext {
     bintrayRepo = 'maven'
     bintrayName = 'swipe-reveal-layout'
 
-    publishedGroupId = 'com.chauthai.swipereveallayout'
+    publishedGroupId = 'com.hydrated.swipereveallayout'
     libraryName = 'SwipeRevealLayout'
     artifact = 'swipe-reveal-layout'
 
     libraryDescription = 'Easy, fast and powerful Swipe Layout for Android'
 
-    siteUrl = 'https://github.com/chthai64/SwipeRevealLayout'
-    gitUrl = 'https://github.com/chthai64/SwipeRevealLayout.git'
+    siteUrl = 'https://github.com/hydrated/SwipeRevealLayout'
+    gitUrl = 'https://github.com/hydrated/SwipeRevealLayout.git'
 
-    libraryVersion = '1.4.0'
+    libraryVersion = 'v2.0.1'
 
-    developerId = 'chthai64'
-    developerName = 'Chau Thai'
-    developerEmail = 'chthai64@gmail.com'
+    developerId = 'hydrated'
+    developerName = 'Hydra'
+    developerEmail = 'hydrawork@gmail.com'
 
     licenseName = 'The MIT License (MIT)'
     licenseUrl = 'https://opensource.org/licenses/MIT'
