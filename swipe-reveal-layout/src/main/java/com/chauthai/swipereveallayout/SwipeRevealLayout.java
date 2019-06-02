@@ -834,7 +834,8 @@ public class SwipeRevealLayout extends ViewGroup {
                     }
 
                     // drag edge is left or right
-                    if (mDragEdge == DRAG_EDGE_LEFT || mDragEdge == DRAG_EDGE_RIGHT) {
+                    //if (mDragEdge == DRAG_EDGE_LEFT || mDragEdge == DRAG_EDGE_RIGHT) {
+                    if ((mDragEdge & DRAG_EDGE_LEFT) > 0 || (mDragEdge & DRAG_EDGE_RIGHT) > 0) {
                         if (mMainView.getLeft() == mRectMainClose.left) {
                             mState = STATE_CLOSE;
                         } else {
