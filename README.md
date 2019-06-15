@@ -11,7 +11,7 @@ repositories {
     }
 }
 
-compile 'com.github.hydrated:SwipeRevealLayout:c3a9ddc'
+compile 'com.github.hydrated:SwipeRevealLayout:960abd4'
 
 
 ### Demo
