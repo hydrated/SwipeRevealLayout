@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SwipeRevealLayout.iml" filepath="$PROJECT_DIR$/SwipeRevealLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/SwipeRevealLayout-demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/SwipeRevealLayout-demo.iml" group="SwipeRevealLayout/demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-SwipeRevealLayout.iml" filepath="$PROJECT_DIR$/.idea/modules/android-SwipeRevealLayout.iml" group="SwipeRevealLayout" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/swipe-reveal-layout/com.chauthai.swipereveallayout-swipe-reveal-layout.iml" filepath="$PROJECT_DIR$/.idea/modules/swipe-reveal-layout/com.chauthai.swipereveallayout-swipe-reveal-layout.iml" group="SwipeRevealLayout/swipe-reveal-layout" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/swipe-reveal-layout/swipe-reveal-layout.iml" filepath="$PROJECT_DIR$/swipe-reveal-layout/swipe-reveal-layout.iml" />
     </modules>
