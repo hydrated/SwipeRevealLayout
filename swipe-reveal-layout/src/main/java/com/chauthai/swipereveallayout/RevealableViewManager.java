@@ -54,8 +54,8 @@ public class RevealableViewManager {
     }
 
     public void onViewPositionChanged(int dx) {
-        for(RevealableViewModel model : list) {
-            model.getView().offsetLeftAndRight(dx);
+        for (RevealableViewModel model : list) {
+            model.getView().offsetTopAndBottom(dx);
         }
     }
 
