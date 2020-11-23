@@ -59,9 +59,15 @@ public class RevealableViewManager {
         return mRectMainOpen;
     }
 
-    public void onViewPositionChanged(int dx) {
+    public void offsetLeftAndRight(int dx) {
         for (RevealableViewModel model : list) {
-            model.getView().offsetTopAndBottom(dx);
+            model.getView().offsetLeftAndRight(dx);
+        }
+    }
+
+    public void offsetTopAndBottom(int dy) {
+        for (RevealableViewModel model : list) {
+            model.getView().offsetTopAndBottom(dy);
         }
     }
 

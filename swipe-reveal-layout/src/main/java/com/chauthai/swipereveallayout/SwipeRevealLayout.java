@@ -875,9 +875,9 @@ public class SwipeRevealLayout extends ViewGroup {
             super.onViewPositionChanged(changedView, left, top, dx, dy);
             if (mMode == MODE_SAME_LEVEL) {
                 if ((mDragEdge & DRAG_EDGE_LEFT) > 0 || (mDragEdge & DRAG_EDGE_RIGHT) > 0) {
-                    revealableViewManager.onViewPositionChanged(dx);
+                    revealableViewManager.offsetLeftAndRight(dx);
                 } else if ((mDragEdge & DRAG_EDGE_TOP) > 0 || (mDragEdge & DRAG_EDGE_BOTTOM) > 0) {
-                    revealableViewManager.onViewPositionChanged(dy);
+                    revealableViewManager.offsetTopAndBottom(dy);
                 }
             }
 
