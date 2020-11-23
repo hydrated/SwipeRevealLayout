@@ -45,11 +45,11 @@ import androidx.customview.widget.ViewDragHelper;
 @SuppressLint("RtlHardcoded")
 public class SwipeRevealLayout extends ViewGroup {
     // These states are used only for ViewBindHelper
-    protected static final int STATE_CLOSE = 0;
-    protected static final int STATE_CLOSING = 1;
-    protected static final int STATE_OPEN = 2;
-    protected static final int STATE_OPENING = 3;
-    protected static final int STATE_DRAGGING = 4;
+    public static final int STATE_CLOSE = 0;
+    public static final int STATE_CLOSING = 1;
+    public static final int STATE_OPEN = 2;
+    public static final int STATE_OPENING = 3;
+    public static final int STATE_DRAGGING = 4;
 
     private static final int DEAFULT_GLANCING_ANIMATION_PAUSE = 300;
     private static final int DEFAULT_MIN_FLING_VELOCITY = 300; // dp per second
@@ -664,9 +664,21 @@ public class SwipeRevealLayout extends ViewGroup {
 
     private int getHalfwayPivotHorizontal() {
         if (currentDragEdge == DRAG_EDGE_LEFT) {
-            return mRectMainClose.left + revealableViewManager.getGroupFromEdge(DRAG_EDGE_TOP).getHeight() / 2;
+            return mRectMainClose.left + revealableViewManager.getGroupFromEdge(DRAG_EDGE_LEFT).getWidth() / 2;
+        } else if (currentDragEdge == DRAG_EDGE_RIGHT) {
+            return mRectMainClose.right - revealableViewManager.getGroupFromEdge(DRAG_EDGE_RIGHT).getWidth() / 2;
         } else {
-            return mRectMainClose.right - revealableViewManager.getGroupFromEdge(DRAG_EDGE_BOTTOM).getHeight() / 2;
+            return 0;
+        }
+    }
+
+    private int getHalfwayPivotVertical() {
+        if (currentDragEdge == DRAG_EDGE_TOP) {
+            return mRectMainClose.top + revealableViewManager.getGroupFromEdge(DRAG_EDGE_TOP).getHeight() / 2;
+        } else if (currentDragEdge == DRAG_EDGE_BOTTOM) {
+            return mRectMainClose.bottom - revealableViewManager.getGroupFromEdge(DRAG_EDGE_BOTTOM).getHeight() / 2;
+        } else {
+            return 0;
         }
     }
 
@@ -755,8 +767,11 @@ public class SwipeRevealLayout extends ViewGroup {
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
             final boolean velRightExceeded = pxToDp((int) xvel) >= mMinFlingVelocity;
             final boolean velLeftExceeded = pxToDp((int) xvel) <= -mMinFlingVelocity;
+            final boolean velUpExceeded = pxToDp((int) yvel) <= -mMinFlingVelocity;
+            final boolean velDownExceeded = pxToDp((int) yvel) >= mMinFlingVelocity;
 
             final int pivotHorizontal = getHalfwayPivotHorizontal();
+            final int pivotVertical = getHalfwayPivotVertical();
 
             switch (currentDragEdge & mEnableEdge) {
                 case DRAG_EDGE_RIGHT:
@@ -783,6 +798,34 @@ public class SwipeRevealLayout extends ViewGroup {
                             close(true);
                         } else {
                             open(true);
+                        }
+                    }
+                    break;
+
+                case DRAG_EDGE_TOP:
+                    if (velUpExceeded) {
+                        close(true);
+                    } else if (velDownExceeded) {
+                        open(true);
+                    } else {
+                        if (mMainView.getTop() < pivotVertical) {
+                            close(true);
+                        } else {
+                            open(true);
+                        }
+                    }
+                    break;
+
+                case DRAG_EDGE_BOTTOM:
+                    if (velUpExceeded) {
+                        open(true);
+                    } else if (velDownExceeded) {
+                        close(true);
+                    } else {
+                        if (mMainView.getBottom() < pivotVertical) {
+                            open(true);
+                        } else {
+                            close(true);
                         }
                     }
                     break;

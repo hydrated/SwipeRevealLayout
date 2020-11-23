@@ -48,6 +48,12 @@ public class RevealableViewManager {
             case DRAG_EDGE_RIGHT:
                 mRectMainOpen.set(main.left - view.getWidth(), main.top, main.right - view.getWidth(), main.bottom);
                 break;
+            case DRAG_EDGE_TOP:
+                mRectMainOpen.set(main.left, main.top + view.getHeight(), main.right, main.bottom + view.getHeight());
+                break;
+            case DRAG_EDGE_BOTTOM:
+                mRectMainOpen.set(main.left, main.top - view.getHeight(), main.right, main.bottom - view.getHeight());
+                break;
 
         }
         return mRectMainOpen;
