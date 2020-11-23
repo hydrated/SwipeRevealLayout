@@ -48,6 +48,10 @@ public class RevealableViewModel {
         return view.getWidth();
     }
 
+    public int getHeight() {
+        return view.getHeight();
+    }
+
     public View getView() {
         return view;
     }

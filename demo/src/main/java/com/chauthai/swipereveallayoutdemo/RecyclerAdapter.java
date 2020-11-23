@@ -20,10 +20,12 @@ import java.util.List;
 /**
  * Created by Chau Thai on 4/8/16.
  */
-public class RecyclerAdapter extends RecyclerView.Adapter implements SwipeListener{
+public class RecyclerAdapter extends RecyclerView.Adapter implements SwipeListener {
     private List<String> mDataSet = new ArrayList<>();
     private LayoutInflater mInflater;
     private final ViewBinderHelper binderHelper = new ViewBinderHelper();
+
+    private static final String tag = "SwipeDemo";
 
 
     public RecyclerAdapter(Context context, List<String> dataSet) {
@@ -82,7 +84,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter implements SwipeListen
 
     @Override
     public void onClosed(SwipeRevealLayout view) {
-        Log.d("SwipeDemo", "onClosed");
     }
 
     @Override
@@ -94,13 +95,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter implements SwipeListen
 
     @Override
     public void onSlide(SwipeRevealLayout view, float slideOffset) {
-        Log.d("SwipeDemo", "slideOffset " + slideOffset);
-
     }
 
     @Override
     public void onTouchUp(boolean isUp) {
-        Log.d("SwipeDemo", "onTouchUp " + isUp);
     }
 
     private class ViewHolder extends RecyclerView.ViewHolder {
