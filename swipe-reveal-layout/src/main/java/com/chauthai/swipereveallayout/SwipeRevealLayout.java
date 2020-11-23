@@ -172,8 +172,13 @@ public class SwipeRevealLayout extends ViewGroup {
 
         // get views
         if (getChildCount() >= 2) {
-            revealableViewManager.putRevealableView(new RevealableViewModel(getChildAt(0), DRAG_EDGE_TOP));
-            revealableViewManager.putRevealableView(new RevealableViewModel(getChildAt(1), DRAG_EDGE_BOTTOM));
+            if (mDragEdge == (DRAG_EDGE_LEFT | DRAG_EDGE_RIGHT)) {
+                revealableViewManager.putRevealableView(new RevealableViewModel(getChildAt(0), DRAG_EDGE_LEFT));
+                revealableViewManager.putRevealableView(new RevealableViewModel(getChildAt(1), DRAG_EDGE_RIGHT));
+            } else {
+                revealableViewManager.putRevealableView(new RevealableViewModel(getChildAt(0), DRAG_EDGE_TOP));
+                revealableViewManager.putRevealableView(new RevealableViewModel(getChildAt(1), DRAG_EDGE_BOTTOM));
+            }
             mMainView = getChildAt(getChildCount() - 1);
         } else if (getChildCount() == 1) {
             mMainView = getChildAt(0);
@@ -270,9 +275,14 @@ public class SwipeRevealLayout extends ViewGroup {
                     case DRAG_EDGE_LEFT:
                         group.getView().offsetLeftAndRight(-group.getWidth());
                         break;
-
                     case DRAG_EDGE_RIGHT:
                         group.getView().offsetLeftAndRight(group.getWidth());
+                        break;
+                    case DRAG_EDGE_TOP:
+                        group.getView().offsetTopAndBottom(-group.getHeight());
+                        break;
+                    case DRAG_EDGE_BOTTOM:
+                        group.getView().offsetTopAndBottom(group.getHeight());
                         break;
                 }
             }
@@ -590,6 +600,9 @@ public class SwipeRevealLayout extends ViewGroup {
             );
 
             mDragEdge = a.getInteger(R.styleable.SwipeRevealLayout_dragEdge, DRAG_EDGE_LEFT | DRAG_EDGE_RIGHT);
+            if (!(mDragEdge != (DRAG_EDGE_LEFT | DRAG_EDGE_RIGHT) || mDragEdge != (DRAG_EDGE_TOP | DRAG_EDGE_BOTTOM))) {
+                throw new IllegalArgumentException("Currently only support vertical or horizontal dragging edges");
+            }
             mMinFlingVelocity = a.getInteger(R.styleable.SwipeRevealLayout_flingVelocity, DEFAULT_MIN_FLING_VELOCITY);
             mMode = a.getInteger(R.styleable.SwipeRevealLayout_mode, MODE_NORMAL);
 
