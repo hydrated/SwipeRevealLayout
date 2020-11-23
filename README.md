@@ -1,6 +1,11 @@
-## This is forked branch from ![SwipeRevealLayout](https://github.com/chthai64/SwipeRevealLayout) with multiple horizontal edges supported.
+## This is forked branch from ![SwipeRevealLayout](https://github.com/chthai64/SwipeRevealLayout) with multiple horizontal and vertical edges supported.
 
 ### Usage swipeLayout.setEnableEdges( EdgeRight | EdgeLeft)
+### swipeLayout.setEnableEdges( EdgeTop | EdgeBottom)
+
+or xml
+
+### app:dragEdge="left|right" or app:dragEdge="top|bottom"
 
 ### Installation 
 Currently still using the latest commit from master.
@@ -21,8 +26,7 @@ compile 'com.github.hydrated:SwipeRevealLayout:960abd4'
 
 
 ![Demo all](https://raw.githubusercontent.com/hydrated/SwipeRevealLayout/master/art/ezgif-1-f6e2694ce0.gif)
-
-
+![Demo all](ehttps://raw.githubusercontent.com/hydrated/SwipeRevealLayout/master/art/zgif-5-24e8a24b0876.gif)
 
 ```app:minDistRequestDisallowParent```: The minimum distance (in px or dp) to the closest drag edge that the SwipeRevealLayout will disallow the parent to intercept touch event. It basically means the minimum distance to swipe until a RecyclerView (or something similar) cannot be scrolled.
 
