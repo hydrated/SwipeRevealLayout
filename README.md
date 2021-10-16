@@ -1,4 +1,4 @@
-## This is forked branch from ![SwipeRevealLayout](https://github.com/chthai64/SwipeRevealLayout) with multiple horizontal and vertical edges supported.
+## This is forked branch from [SwipeRevealLayout](https://github.com/chthai64/SwipeRevealLayout) with multiple horizontal and vertical edges supported.
 
 ### Usage swipeLayout.setEnableEdges( EdgeRight | EdgeLeft)
 ### swipeLayout.setEnableEdges( EdgeTop | EdgeBottom)
@@ -16,7 +16,7 @@ repositories {
     }
 }
 
-compile 'com.github.hydrated:SwipeRevealLayout:c55b6cb'
+implementation 'com.github.hydrated:SwipeRevealLayout:cedd8e7'
 
 
 ### Demo
