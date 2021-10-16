@@ -52,7 +52,7 @@ public class SwipeRevealLayout extends ViewGroup {
     public static final int STATE_DRAGGING = 4;
 
     private static final int DEAFULT_GLANCING_ANIMATION_PAUSE = 300;
-    private static final int DEFAULT_MIN_FLING_VELOCITY = 300; // dp per second
+    private static final int DEFAULT_MIN_FLING_VELOCITY = 500; // dp per second
     private static final int DEFAULT_MIN_DIST_REQUEST_DISALLOW_PARENT = 1; // dp
 
     public static final int DRAG_EDGE_NONE = 0;
@@ -625,15 +625,6 @@ public class SwipeRevealLayout extends ViewGroup {
         public boolean onDown(MotionEvent e) {
             mIsScrolling = false;
             hasDisallowed = false;
-            switch (e.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    break;
-                case MotionEvent.ACTION_UP:
-                case MotionEvent.ACTION_CANCEL:
-                    getParent().requestDisallowInterceptTouchEvent(false);
-                    break;
-            }
             return true;
         }
 
@@ -648,32 +639,14 @@ public class SwipeRevealLayout extends ViewGroup {
             mIsScrolling = true;
 
             if (getParent() != null) {
-                boolean shouldDisallow;
+                boolean shouldDisallow = false;
 
-                if (!hasDisallowed) {
-                    shouldDisallow = getDistToClosestEdge() >= mMinDistRequestDisallowParent;
-                    if (shouldDisallow) {
-                        hasDisallowed = true;
-                    }
-                } else {
-                    shouldDisallow = true;
-                }
-
-                // disallow parent to intercept touch event so that the layout will work
-                // properly on RecyclerView or view that handles scroll gesture.
-                // TODO: simply intercept all event from parents now.
-                getParent().requestDisallowInterceptTouchEvent(true);
+                //getParent().requestDisallowInterceptTouchEvent(shouldDisallow);
             }
 
             return false;
         }
     };
-
-    private int getDistToClosestEdge() {
-        //TODO: later
-
-        return 0;
-    }
 
     private int getHalfwayPivotHorizontal() {
         if (currentDragEdge == DRAG_EDGE_LEFT) {
@@ -878,6 +851,7 @@ public class SwipeRevealLayout extends ViewGroup {
                     revealableViewManager.offsetLeftAndRight(dx);
                 } else if ((mDragEdge & DRAG_EDGE_TOP) > 0 || (mDragEdge & DRAG_EDGE_BOTTOM) > 0) {
                     revealableViewManager.offsetTopAndBottom(dy);
+                    getParent().requestDisallowInterceptTouchEvent(dy != 0);
                 }
             }
 
