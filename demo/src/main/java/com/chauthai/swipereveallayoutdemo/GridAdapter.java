@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.chauthai.swipereveallayout.SwipeRevealLayout;
-import com.chauthai.swipereveallayout.ViewBinderHelper;
+import com.hydrated.swipereveallayout.SwipeRevealLayout;
+import com.hydrated.swipereveallayout.ViewBinderHelper;
 
 import java.util.List;
 

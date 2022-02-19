@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.chauthai.swipereveallayout.SwipeRevealLayout
+<com.hydrated.swipereveallayout.SwipeRevealLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipe_layout"
@@ -70,4 +70,4 @@
             android:textSize="18sp"
             />
     </LinearLayout>
-</com.chauthai.swipereveallayout.SwipeRevealLayout>
+</com.hydrated.swipereveallayout.SwipeRevealLayout>

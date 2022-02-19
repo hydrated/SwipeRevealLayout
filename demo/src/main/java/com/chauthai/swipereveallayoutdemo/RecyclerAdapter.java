@@ -2,7 +2,6 @@ package com.chauthai.swipereveallayoutdemo;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +9,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.chauthai.swipereveallayout.SwipeListener;
-import com.chauthai.swipereveallayout.SwipeRevealLayout;
-import com.chauthai.swipereveallayout.ViewBinderHelper;
+import com.hydrated.swipereveallayout.SwipeListener;
+import com.hydrated.swipereveallayout.SwipeRevealLayout;
+import com.hydrated.swipereveallayout.ViewBinderHelper;
 
 import java.util.ArrayList;
 import java.util.List;
