@@ -1,6 +1,6 @@
-package com.chauthai.swipereveallayout;
+package com.hydrated.swipereveallayout;
 
-import static com.chauthai.swipereveallayout.SwipeRevealLayout.*;
+import static com.hydrated.swipereveallayout.SwipeRevealLayout.*;
 
 /**
  * Created by hydra on 2017/2/18.

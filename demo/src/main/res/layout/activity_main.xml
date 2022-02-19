@@ -17,7 +17,7 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:titleTextColor="@android:color/white"/>
 
-        <com.chauthai.swipereveallayout.SwipeRevealLayout
+        <com.hydrated.swipereveallayout.SwipeRevealLayout
             android:id="@+id/swipe_layout_1"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -63,10 +63,10 @@
                     android:gravity="center"
                     android:layout_gravity="center"/>
             </FrameLayout>
-        </com.chauthai.swipereveallayout.SwipeRevealLayout>
+        </com.hydrated.swipereveallayout.SwipeRevealLayout>
 
 
-    <com.chauthai.swipereveallayout.SwipeRevealLayout
+    <com.hydrated.swipereveallayout.SwipeRevealLayout
         android:id="@+id/swipe_layout_2"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -113,9 +113,9 @@
                 android:gravity="center"
                 android:layout_gravity="center"/>
         </FrameLayout>
-    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+    </com.hydrated.swipereveallayout.SwipeRevealLayout>
 
-    <com.chauthai.swipereveallayout.SwipeRevealLayout
+    <com.hydrated.swipereveallayout.SwipeRevealLayout
         android:id="@+id/swipe_layout_3"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -151,9 +151,9 @@
                 android:gravity="center"
                 android:layout_gravity="center"/>
         </FrameLayout>
-    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+    </com.hydrated.swipereveallayout.SwipeRevealLayout>
 
-    <com.chauthai.swipereveallayout.SwipeRevealLayout
+    <com.hydrated.swipereveallayout.SwipeRevealLayout
         android:id="@+id/swipe_layout_4"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -189,5 +189,5 @@
                 android:gravity="center"
                 android:layout_gravity="center"/>
         </FrameLayout>
-    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+    </com.hydrated.swipereveallayout.SwipeRevealLayout>
 </LinearLayout>

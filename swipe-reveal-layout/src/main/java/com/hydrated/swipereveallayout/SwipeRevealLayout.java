@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  * <p>
- * Copyright (c) 2016 Chau Thai
+ * Copyright (c) 2016 Chau Thai, Hydra
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.chauthai.swipereveallayout;
+package com.hydrated.swipereveallayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -41,6 +41,8 @@ import androidx.annotation.RequiresApi;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.core.view.ViewCompat;
 import androidx.customview.widget.ViewDragHelper;
+
+import com.chauthai.swipereveallayout.R;
 
 @SuppressLint("RtlHardcoded")
 public class SwipeRevealLayout extends ViewGroup {
