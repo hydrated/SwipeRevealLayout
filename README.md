@@ -8,15 +8,6 @@ or xml
 ### app:dragEdge="left|right" or app:dragEdge="top|bottom"
 
 ### Installation 
-Currently still using the latest commit from master.
-
-repositories {
-    maven {
-        url "https://jitpack.io"
-    }
-}
-
-implementation 'com.github.hydrated:SwipeRevealLayout:cedd8e7'
 
 
 ### Demo
