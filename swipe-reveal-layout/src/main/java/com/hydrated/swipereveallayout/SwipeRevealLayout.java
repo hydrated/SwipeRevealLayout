@@ -37,14 +37,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.RequiresApi;
 import androidx.core.view.GestureDetectorCompat;
 import androidx.core.view.ViewCompat;
 import androidx.customview.widget.ViewDragHelper;
 
 import com.hydrated.swipereveallayout.R;
 
-@SuppressLint("RtlHardcoded")
 public class SwipeRevealLayout extends ViewGroup {
     // These states are used only for ViewBindHelper
     public static final int STATE_CLOSE = 0;
@@ -454,7 +452,6 @@ public class SwipeRevealLayout extends ViewGroup {
      * Animation that swipe a little bit as a glance.
      */
 
-    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public void doCornerGlanceAnimation(int dragEdge, float percentage) {
         if (percentage < 0 || percentage > 1) {
             throw new IllegalArgumentException("doCornerGlanceAnimation(dragEdge, percentage). percentage should be 0<=p<=1. p:" + percentage);

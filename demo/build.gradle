@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.chauthai.swipereveallayout.test2"
-        minSdkVersion 14
+        minSdkVersion 26
         targetSdkVersion 35
         versionCode 7
         versionName "1.4.0"
