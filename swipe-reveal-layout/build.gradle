@@ -1,4 +1,9 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'maven-publish'
+    id 'com.android.library'
+}
+
+group = 'com.github.hydrated'
 
 android {
     namespace "com.hydrated.swipereveallayout"
@@ -12,7 +17,14 @@ android {
         versionCode 7
         versionName "1.4.0"
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
     buildTypes {
+        debug {
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -26,3 +38,18 @@ dependencies {
     //implementation 'androidx.customview:customview:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = 'io.jitpack'
+                artifactId = 'library'
+                version = '1.0.0'
+                from components.findByName('release')
+
+            }
+        }
+    }
+}
+
