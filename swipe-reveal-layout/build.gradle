@@ -43,9 +43,9 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                groupId = 'io.jitpack'
-                artifactId = 'library'
-                version = '1.0.0'
+                groupId = 'com.github.hydrated'
+                artifactId = 'swipe-reveal-layout'
+                version = '1.5.3'
                 from components.findByName('release')
 
             }
