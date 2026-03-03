@@ -45,9 +45,8 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.hydrated'
                 artifactId = 'swipe-reveal-layout'
-                version = '1.5.3'
-                from components.findByName('release')
-
+                version = '1.5.4'
+                from(components["java"])
             }
         }
     }
