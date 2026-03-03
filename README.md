@@ -9,6 +9,8 @@ or xml
 
 ### Installation 
 
+maven { url 'https://jitpack.io' }
+implementation 'com.github.hydrated:SwipeRevealLayout:1.5.6'
 
 ### Demo
 ##### Overview
