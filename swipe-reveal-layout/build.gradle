@@ -21,6 +21,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar() 
+        }
+    }
     buildTypes {
         debug {
 
@@ -39,15 +45,15 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                groupId = 'com.github.hydrated'
-                artifactId = 'swipe-reveal-layout'
-                version = '1.5.3'
-                from components.findByName('release')
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.hydrated'
+            artifactId = 'swipe-reveal-layout'
+            version = '1.5.4'
 
+            afterEvaluate {
+                from components.release
             }
         }
     }
